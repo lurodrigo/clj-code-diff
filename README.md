@@ -35,4 +35,4 @@ Replace «1» with «(* x 1)»:
 
 ## License
 
-Copyright © 2020 Luiz Rodrigo de Souza.
+Copyright © 2020 Luiz Rodrigo de Souza. MIT License
