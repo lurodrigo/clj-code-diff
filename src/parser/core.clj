@@ -30,7 +30,10 @@
                         :meta node/meta-node
                         :quote node/quote-node
                         :syntax-quote node/syntax-quote-node
-                        :var node/var-node)]
+                        :var node/var-node
+                        :forms node/forms-node
+                        :map node/map-node
+                        :namespaced-map node/namespaced-map-node)]
       (constructor (map data->node children)))))
 
 (def as-code (comp node/string data->node))
@@ -52,8 +55,8 @@
   (reduce apply-edit data (edit/get-edits edits)))
 
 (comment
-  (def code1 (parser/parse-string "(defn x 1)"))
-  (def code2 (parser/parse-string "(defn y [x] (* x 1))"))
+  (def code1 (parser/parse-string-all "(defn x 1)"))
+  (def code2 (parser/parse-string-all "(defn y [x] (* x 1))"))
   (def data1 (node->data code1))
   (def data2 (node->data code2))
   (def edits (e/diff data1 data2))

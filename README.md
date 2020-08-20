@@ -4,8 +4,8 @@
 ## Usage
 
 ```clojure
-(let [code1 (parser/parse-string "(def x 1)")
-      code2 (parser/parse-string "(defn y [x] (* x 1)")
+(let [code1 (parser/parse-string-all "(def x 1)")
+      code2 (parser/parse-string-all "(defn y [x] (* x 1))")
       data1 (node->data code1)
       data2 (node->data code2)
       edits (e/diff data1 data2)]
